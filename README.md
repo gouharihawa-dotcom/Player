@@ -87,4 +87,4 @@ The application uses:
 
 ## Author
 
-Your Name
+Hawa Gouhari
