@@ -29,7 +29,7 @@ Videos and their information are stored locally using browser storage technologi
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-project-name.git
+https://github.com/gouharihawa-dotcom/Player.git
 ```
 
 Go to the project folder:
@@ -87,4 +87,4 @@ The application uses:
 
 ## Author
 
-Your Name
+Hawa Gouhari
