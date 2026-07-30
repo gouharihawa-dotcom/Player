@@ -16,7 +16,7 @@ export default function LibraryFilters({ sortBy, onSortChange }) {
             <button
               key={opt.value}
               onClick={() => onSortChange(opt.value)}
-            className={`flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-md text-xs sm:text-sm transition-colors ${
+            className={`flex items-center gap-1 px-2 py-1 sm:px-2 sm:py-1.5 rounded-md text-xs sm:text-sm transition-colors ${
                 sortBy === opt.value
                   ? "bg-primary text-white"
                   : "text-text-muted hover:text-text hover:bg-surface-light"

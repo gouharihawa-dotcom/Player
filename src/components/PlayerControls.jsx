@@ -127,7 +127,7 @@ export default function PlayerControls({
             </div>
           </div>
 
-         <span className="text-white text-[11px] sm:text-xs md:text-sm font-mono mr-2 whitespace-nowrap">
+ <span className="text-white text-[10px] sm:text-xs md:text-sm font-mono mr-1 sm:mr-2 whitespace-nowrap">
   {formatTime(currentTime)} / {formatTime(duration)}
 </span>
         </div>
