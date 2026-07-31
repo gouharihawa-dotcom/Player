@@ -76,45 +76,45 @@ export default function PlayerControls({
       </div>
 
       {/* Controls row */}
-      <div className="flex items-center justify-between">
+     <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <button
             onClick={onTogglePlay}
-            className="p-2 rounded-lg hover:bg-primary/10 transition-colors text-primary"
+           className="p-1 sm:p-2 rounded-lg hover:bg-primary/10 transition-colors text-primary"
           >
             {isPlaying ? (
-              <Pause className="w-5 h-5" />
+              <Pause className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <Play className="w-5 h-5" />
+              <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
 
           <button
             onClick={() => onSeek(Math.max(0, currentTime - 10))}
-            className="p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
+            className="p-1 sm:p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
           >
-            <SkipBack className="w-4 h-4" />
+            <SkipBack className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
 
           <button
             onClick={() => onSeek(Math.min(duration, currentTime + 10))}
             className="p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
           >
-            <SkipForward className="w-4 h-4" />
+            <SkipForward className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
 
           <div className="flex items-center gap-2 group">
             <button
               onClick={onToggleMute}
-              className="p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
+             className="p-1 sm:p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
             >
               {isMuted || volume === 0 ? (
-                <VolumeX className="w-4 h-4" />
+               <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               ) : (
-                <Volume2 className="w-4 h-4" />
+                <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               )}
             </button>
-            <div className="w-0 overflow-hidden group-hover:w-20 transition-all duration-300">
+            <div className="w-0 overflow-hidden group-hover:w-16 sm:group-hover:w-20 transition-all duration-300">
               <input
                 type="range"
                 min={0}
@@ -122,25 +122,25 @@ export default function PlayerControls({
                 step={0.05}
                 value={isMuted ? 0 : volume}
                 onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
-                className="w-16"
+                className="w-14 sm:w-16"
               />
             </div>
           </div>
 
- <span className="text-white text-[10px] sm:text-xs md:text-sm font-mono mr-1 sm:mr-2 whitespace-nowrap">
-  {formatTime(currentTime)} / {formatTime(duration)}
-</span>
+          <span className="text-white text-[10px] sm:text-xs md:text-sm font-mono mr-1 sm:mr-2 whitespace-nowrap">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </span>
         </div>
 
-        <div className="flex items-center gap-2">
+       <div className="flex items-center gap-1 sm:gap-2">
           <div className="relative">
-         <button
-  onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-  className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 py-1.5 rounded-lg hover:bg-white/10 transition-colors text-white text-xs sm:text-sm"
->
-  <Gauge className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-  <span>{playbackRate}x</span>
-</button>
+            <button
+              onClick={() => setShowSpeedMenu(!showSpeedMenu)}
+              className="flex items-center gap-1 px-2 py-1.5 rounded-lg hover:bg-white/10 transition-colors text-white text-sm"
+            >
+              <Gauge className="w-4 h-4" />
+              <span>{playbackRate}x</span>
+            </button>
             {showSpeedMenu && (
               <div className="absolute bottom-full mb-2 right-0 bg-surface-light border border-border rounded-lg shadow-xl overflow-hidden min-w-[80px] z-50">
                 {speeds.map((s) => (
@@ -162,13 +162,14 @@ export default function PlayerControls({
               </div>
             )}
           </div>
-<button
-  onClick={onScreenshot}
-  className="p-1.5 sm:p-1 rounded-lg hover:bg-white/10 transition-colors text-white"
-  title="Take screenshot"
->
-  <Camera className="w-4 h-4 sm:w-4 sm:h-4" />
-</button>
+
+          <button
+            onClick={onScreenshot}
+            className="p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
+            title="Take screenshot"
+          >
+            <Camera className="w-5 h-5" />
+          </button>
 
           <button
             onClick={onToggleFullscreen}
@@ -184,4 +185,4 @@ export default function PlayerControls({
       </div>
     </div>
   );
-}
+}  
